@@ -30,3 +30,28 @@
 
  <p>첫째 줄에 달팽이가 나무 막대를 모두 올라가는데 며칠이 걸리는지 출력한다.</p>
 
+#### 메모
+<p>시간초과 판정을 받은 코드</p>
+<pre><code>
+ int main(void)
+{
+	int A, B, V;
+	int day = 1;
+	int length = 0;
+	cin >> A >> B >> V;
+	for (int i = 0; i < V; i = i + A - B) {
+		length += A;
+		if (length >= V) {
+			cout << day;
+			break;
+		}
+		else {
+			length -= B;
+			day++;
+		}
+	}
+	return 0;
+}
+</pre></code>
+
+<p>해결법: for문으로 문제를 해결하는 게 아니라 수식으로 문제를 해결하면 시간 내에 값이 도출된다. </p>
